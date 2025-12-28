@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:food_delivery_app/core/utils/extensions/app_path.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
+import 'package:yumquick/core/utils/extensions/app_path.dart';
 // import 'package:hiveme_up/utils/app_path.dart';
 
 class StorageKeys {

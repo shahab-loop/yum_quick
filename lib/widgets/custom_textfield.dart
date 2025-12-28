@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:food_delivery_app/core/res/theme/theme_manager/theme_manager.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:yumquick/core/res/theme_manager/theme_manager.dart';
 
 class CustomTextFormFieldWidget extends StatelessWidget {
   final String hintText;
@@ -54,9 +54,9 @@ class CustomTextFormFieldWidget extends StatelessWidget {
     this.maxLines = 1,
     this.minLines,
     this.useUnderlineBorder = false, required this.TextColor,
-  })  : borderColor = borderColor ?? ThemeManager.primaryColor!,
+  })  : borderColor = borderColor ?? ThemeManager.primaryColor,
         focusedBorderColor =
-            focusedBorderColor ?? ThemeManager.primaryColor!,
+            focusedBorderColor ?? ThemeManager.primaryColor,
         _obscureNotifier = ValueNotifier<bool>(obscure);
 
   @override

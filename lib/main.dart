@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery_app/core/utils/size_utils.dart';
-import 'package:food_delivery_app/storage/local_storage.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'core/navigations/app_routes/app_routes.dart';
-import 'core/res/theme/theme_manager/theme_manager.dart';
+import 'package:yumquick/core/navigations/app_routes/app_routes.dart';
+import 'package:yumquick/core/navigations/routes/routes.dart';
+import 'package:yumquick/core/res/theme_manager/theme_manager.dart';
+import 'package:yumquick/core/utils/size_utils.dart';
+import 'package:yumquick/storage/local_storage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +28,9 @@ class MyApp extends StatelessWidget {
             scrollBehavior: MyBehavior(),
             darkTheme: ThemeManager.darkTheme,
             locale: const Locale('en', 'US'),
-            // getPages: AppRoutes.pages,
+            theme: ThemeManager.darkTheme,
+            initialRoute: Routes.splashScreen,
+            getPages: AppRoutes.pages,
           ),
         );
       },

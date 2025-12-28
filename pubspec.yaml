@@ -1,11 +1,11 @@
-name: food_delivery_app
+name: yumquick
 description: "A new Flutter food delivery application."
 publish_to: 'none'
 
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.10.4
+  sdk: ">=3.10.4 <4.0.0"
 
 dependencies:
   flutter:
@@ -31,31 +31,19 @@ dev_dependencies:
 
   flutter_lints: ^6.0.0
 
-  # FlutterGen
-  flutter_gen_runner: ^5.6.0
   build_runner: ^2.4.13
+  flutter_gen_runner: ^5.6.0
 
 flutter:
-
   uses-material-design: true
 
   assets:
     - assets/images/
-    - assets/icons/
-    - assets/logos/
+    - assets/svgs/
 
-  fonts:
-    - family: Poppins
-      fonts:
-        - asset: assets/fonts/Poppins-Regular.ttf
-        - asset: assets/fonts/Poppins-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/Poppins-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/Poppins-Bold.ttf
-          weight: 700
+# ❌ Local fonts REMOVED to avoid build failure
+# Use GoogleFonts.poppins() instead
 
-# FlutterGen configuration
 flutter_gen:
   output: lib/gen/
   line_length: 80
@@ -69,9 +57,4 @@ flutter_gen:
     enabled: true
 
   fonts:
-    enabled: true
-
-  colors:
-    enabled: true
-    inputs:
-      - assets/colors/colors.xml
+    enabled: false
