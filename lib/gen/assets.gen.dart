@@ -9,7 +9,10 @@
 // ignore_for_file: type=lint
 // ignore_for_file: deprecated_member_use,directives_ordering,implicit_dynamic_list_literal,unnecessary_import
 
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart' as _svg;
+import 'package:vector_graphics/vector_graphics.dart' as _vg;
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
@@ -57,9 +60,12 @@ class $AssetsImagesGen {
   AssetGenImage get chocolateBrowie =>
       const AssetGenImage('assets/images/chocolate_browie.png');
 
-  /// File path: assets/images/chocolate_icecream.png
-  AssetGenImage get chocolateIcecream =>
-      const AssetGenImage('assets/images/chocolate_icecream.png');
+  /// File path: assets/images/chocolateicecream.png
+  AssetGenImage get chocolateicecream =>
+      const AssetGenImage('assets/images/chocolateicecream.png');
+
+  /// File path: assets/images/cofee.png
+  AssetGenImage get cofee => const AssetGenImage('assets/images/cofee.png');
 
   /// File path: assets/images/coffee.png
   AssetGenImage get coffee => const AssetGenImage('assets/images/coffee.png');
@@ -156,7 +162,8 @@ class $AssetsImagesGen {
     chickenCurry1,
     chickenZinger,
     chocolateBrowie,
-    chocolateIcecream,
+    chocolateicecream,
+    cofee,
     coffee,
     curryBowl,
     fingerFish,
@@ -182,10 +189,184 @@ class $AssetsImagesGen {
   ];
 }
 
+class $AssetsSvgsGen {
+  const $AssetsSvgsGen();
+
+  /// File path: assets/svgs/1dot.svg
+  SvgGenImage get a1dot => const SvgGenImage('assets/svgs/1dot.svg');
+
+  /// File path: assets/svgs/2dot.svg
+  SvgGenImage get a2dot => const SvgGenImage('assets/svgs/2dot.svg');
+
+  /// File path: assets/svgs/3dot.svg
+  SvgGenImage get a3dot => const SvgGenImage('assets/svgs/3dot.svg');
+
+  /// File path: assets/svgs/Instagram.svg
+  SvgGenImage get instagram => const SvgGenImage('assets/svgs/Instagram.svg');
+
+  /// File path: assets/svgs/Less.svg
+  SvgGenImage get less => const SvgGenImage('assets/svgs/Less.svg');
+
+  /// File path: assets/svgs/LogOut_icon.svg
+  SvgGenImage get logOutIcon =>
+      const SvgGenImage('assets/svgs/LogOut_icon.svg');
+
+  /// File path: assets/svgs/Paypal.svg
+  SvgGenImage get paypal => const SvgGenImage('assets/svgs/Paypal.svg');
+
+  /// File path: assets/svgs/Snacks.svg
+  SvgGenImage get snacks => const SvgGenImage('assets/svgs/Snacks.svg');
+
+  /// File path: assets/svgs/Vegan.svg
+  SvgGenImage get vegan => const SvgGenImage('assets/svgs/Vegan.svg');
+
+  /// File path: assets/svgs/WhatApp.svg
+  SvgGenImage get whatApp => const SvgGenImage('assets/svgs/WhatApp.svg');
+
+  /// File path: assets/svgs/addcart.svg
+  SvgGenImage get addcart => const SvgGenImage('assets/svgs/addcart.svg');
+
+  /// File path: assets/svgs/boofy.svg
+  SvgGenImage get boofy => const SvgGenImage('assets/svgs/boofy.svg');
+
+  /// File path: assets/svgs/card.svg
+  SvgGenImage get card => const SvgGenImage('assets/svgs/card.svg');
+
+  /// File path: assets/svgs/cart.svg
+  SvgGenImage get cart => const SvgGenImage('assets/svgs/cart.svg');
+
+  /// File path: assets/svgs/contact.svg
+  SvgGenImage get contact => const SvgGenImage('assets/svgs/contact.svg');
+
+  /// File path: assets/svgs/cross.svg
+  SvgGenImage get cross => const SvgGenImage('assets/svgs/cross.svg');
+
+  /// File path: assets/svgs/deliveryboy.svg
+  SvgGenImage get deliveryboy =>
+      const SvgGenImage('assets/svgs/deliveryboy.svg');
+
+  /// File path: assets/svgs/desserts.svg
+  SvgGenImage get desserts => const SvgGenImage('assets/svgs/desserts.svg');
+
+  /// File path: assets/svgs/dp.svg
+  SvgGenImage get dp => const SvgGenImage('assets/svgs/dp.svg');
+
+  /// File path: assets/svgs/drinks.svg
+  SvgGenImage get drinks => const SvgGenImage('assets/svgs/drinks.svg');
+
+  /// File path: assets/svgs/facebook.svg
+  SvgGenImage get facebook => const SvgGenImage('assets/svgs/facebook.svg');
+
+  /// File path: assets/svgs/filter.svg
+  SvgGenImage get filter => const SvgGenImage('assets/svgs/filter.svg');
+
+  /// File path: assets/svgs/globalicon.svg
+  SvgGenImage get globalicon => const SvgGenImage('assets/svgs/globalicon.svg');
+
+  /// File path: assets/svgs/googleplay.svg
+  SvgGenImage get googleplay => const SvgGenImage('assets/svgs/googleplay.svg');
+
+  /// File path: assets/svgs/heart.svg
+  SvgGenImage get heart => const SvgGenImage('assets/svgs/heart.svg');
+
+  /// File path: assets/svgs/helpline.svg
+  SvgGenImage get helpline => const SvgGenImage('assets/svgs/helpline.svg');
+
+  /// File path: assets/svgs/location.svg
+  SvgGenImage get location => const SvgGenImage('assets/svgs/location.svg');
+
+  /// File path: assets/svgs/mac.svg
+  SvgGenImage get mac => const SvgGenImage('assets/svgs/mac.svg');
+
+  /// File path: assets/svgs/meals.svg
+  SvgGenImage get meals => const SvgGenImage('assets/svgs/meals.svg');
+
+  /// File path: assets/svgs/messege.svg
+  SvgGenImage get messege => const SvgGenImage('assets/svgs/messege.svg');
+
+  /// File path: assets/svgs/notes.svg
+  SvgGenImage get notes => const SvgGenImage('assets/svgs/notes.svg');
+
+  /// File path: assets/svgs/notificationIcon.svg
+  SvgGenImage get notificationIcon =>
+      const SvgGenImage('assets/svgs/notificationIcon.svg');
+
+  /// File path: assets/svgs/orangelessicon.svg
+  SvgGenImage get orangelessicon =>
+      const SvgGenImage('assets/svgs/orangelessicon.svg');
+
+  /// File path: assets/svgs/profile.svg
+  SvgGenImage get profile => const SvgGenImage('assets/svgs/profile.svg');
+
+  /// File path: assets/svgs/rating-star.svg
+  SvgGenImage get ratingStar =>
+      const SvgGenImage('assets/svgs/rating-star.svg');
+
+  /// File path: assets/svgs/rename.svg
+  SvgGenImage get rename => const SvgGenImage('assets/svgs/rename.svg');
+
+  /// File path: assets/svgs/sea_food.png
+  AssetGenImage get seaFood => const AssetGenImage('assets/svgs/sea_food.png');
+
+  /// File path: assets/svgs/settings.svg
+  SvgGenImage get settings => const SvgGenImage('assets/svgs/settings.svg');
+
+  /// File path: assets/svgs/tick.svg
+  SvgGenImage get tick => const SvgGenImage('assets/svgs/tick.svg');
+
+  /// File path: assets/svgs/transfer.svg
+  SvgGenImage get transfer => const SvgGenImage('assets/svgs/transfer.svg');
+
+  /// List of all assets
+  List<dynamic> get values => [
+    a1dot,
+    a2dot,
+    a3dot,
+    instagram,
+    less,
+    logOutIcon,
+    paypal,
+    snacks,
+    vegan,
+    whatApp,
+    addcart,
+    boofy,
+    card,
+    cart,
+    contact,
+    cross,
+    deliveryboy,
+    desserts,
+    dp,
+    drinks,
+    facebook,
+    filter,
+    globalicon,
+    googleplay,
+    heart,
+    helpline,
+    location,
+    mac,
+    meals,
+    messege,
+    notes,
+    notificationIcon,
+    orangelessicon,
+    profile,
+    ratingStar,
+    rename,
+    seaFood,
+    settings,
+    tick,
+    transfer,
+  ];
+}
+
 class Assets {
   const Assets._();
 
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsSvgsGen svgs = $AssetsSvgsGen();
 }
 
 class AssetGenImage {
@@ -274,4 +455,78 @@ class AssetGenImageAnimation {
   final bool isAnimation;
   final Duration duration;
   final int frames;
+}
+
+class SvgGenImage {
+  const SvgGenImage(this._assetName, {this.size, this.flavors = const {}})
+    : _isVecFormat = false;
+
+  const SvgGenImage.vec(this._assetName, {this.size, this.flavors = const {}})
+    : _isVecFormat = true;
+
+  final String _assetName;
+  final Size? size;
+  final Set<String> flavors;
+  final bool _isVecFormat;
+
+  _svg.SvgPicture svg({
+    Key? key,
+    bool matchTextDirection = false,
+    AssetBundle? bundle,
+    String? package,
+    double? width,
+    double? height,
+    BoxFit fit = BoxFit.contain,
+    AlignmentGeometry alignment = Alignment.center,
+    bool allowDrawingOutsideViewBox = false,
+    WidgetBuilder? placeholderBuilder,
+    String? semanticsLabel,
+    bool excludeFromSemantics = false,
+    _svg.SvgTheme? theme,
+    _svg.ColorMapper? colorMapper,
+    ColorFilter? colorFilter,
+    Clip clipBehavior = Clip.hardEdge,
+    @deprecated Color? color,
+    @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
+    @deprecated bool cacheColorFilter = false,
+  }) {
+    final _svg.BytesLoader loader;
+    if (_isVecFormat) {
+      loader = _vg.AssetBytesLoader(
+        _assetName,
+        assetBundle: bundle,
+        packageName: package,
+      );
+    } else {
+      loader = _svg.SvgAssetLoader(
+        _assetName,
+        assetBundle: bundle,
+        packageName: package,
+        theme: theme,
+        colorMapper: colorMapper,
+      );
+    }
+    return _svg.SvgPicture(
+      loader,
+      key: key,
+      matchTextDirection: matchTextDirection,
+      width: width,
+      height: height,
+      fit: fit,
+      alignment: alignment,
+      allowDrawingOutsideViewBox: allowDrawingOutsideViewBox,
+      placeholderBuilder: placeholderBuilder,
+      semanticsLabel: semanticsLabel,
+      excludeFromSemantics: excludeFromSemantics,
+      colorFilter:
+          colorFilter ??
+          (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
+      clipBehavior: clipBehavior,
+      cacheColorFilter: cacheColorFilter,
+    );
+  }
+
+  String get path => _assetName;
+
+  String get keyName => _assetName;
 }

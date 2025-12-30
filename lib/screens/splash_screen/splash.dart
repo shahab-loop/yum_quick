@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:yumquick/core/res/theme_manager/theme_manager.dart';
 import 'package:yumquick/core/utils/size_utils.dart';
 import 'package:yumquick/gen/assets.gen.dart';
+import 'package:yumquick/screens/splash_screen/controller/splash_controller.dart';
 import 'package:yumquick/widgets/basescaffold.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -11,6 +13,7 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final SplashController controller = Get.find<SplashController>();
     return BaseScaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

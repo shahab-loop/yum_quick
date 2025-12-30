@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:yumquick/core/navigations/app_routes/app_routes.dart';
 import 'package:yumquick/core/navigations/routes/routes.dart';
@@ -8,6 +9,11 @@ import 'package:yumquick/storage/local_storage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: ThemeManager.yellow2,
+    statusBarIconBrightness: Brightness.light,
+    statusBarBrightness: Brightness.dark,
+  ));
   await LocalStorage.init();
   runApp(const MyApp());
 }
