@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yumquick/core/app_const/app_const.dart';
 import 'package:yumquick/core/modal/model.dart';
+import 'package:yumquick/core/navigations/navigation_helper/navigation_helper.dart';
+import 'package:yumquick/core/navigations/routes/routes.dart';
 
 class OnboardingController extends GetxController {
   final PageController pageController = PageController();
@@ -17,7 +19,7 @@ class OnboardingController extends GetxController {
 
   void nextPage() {
     if (currentIndex.value == onboardingList.length - 1) {
-      Get.offAllNamed('/home');
+      NavigationHelper.navigateTo(Routes.login);
     } else {
       pageController.nextPage(
         duration: const Duration(milliseconds: 300),

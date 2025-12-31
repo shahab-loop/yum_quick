@@ -16,7 +16,9 @@ class OnboardingScreen extends StatelessWidget {
     final OnboardingController controller = Get.put(OnboardingController());
 
     return Scaffold(
-      body: SafeArea(top: true,bottom: false,
+      body: SafeArea(
+        top: true,
+        bottom: false,
         child: Stack(
           children: [
             PageView.builder(
@@ -33,7 +35,7 @@ class OnboardingScreen extends StatelessWidget {
                 );
               },
             ),
-        
+
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
@@ -49,80 +51,121 @@ class OnboardingScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Gap(34.h),
-        
-                    Obx(() => SvgPicture.asset(
-                      controller.currentItem.svgs,
-                      color: ThemeManager.orangeBase,
-                      height: 40.h,
-                    )),
-        
-                    Gap(18.h),
-        
-                    Obx(() => Text(
-                      controller.currentItem.title,
-                      style: Theme.of(context)
-                          .textTheme
-                          .labelMedium
-                          ?.copyWith(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w900,
+
+                    Obx(
+                      () => SvgPicture.asset(
+                        controller.currentItem.svgs,
+                        color: ThemeManager.orangeBase,
+                        height: 40.h,
                       ),
-                    )),
-        
-                    Gap(19.h),
-        
-                    Obx(() => SizedBox(
-                      height: 42.h,
-                      width: 272.w,
-                      child: Text(
-                        controller.currentItem.description,
-                        textAlign: TextAlign.center,
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodySmall
+                    ),
+
+                    Gap(18.h),
+
+                    Obx(
+                      () => Text(
+                        controller.currentItem.title,
+                        style: Theme.of(context).textTheme.labelMedium
                             ?.copyWith(
-                          fontWeight: FontWeight.w500,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w900,
+                            ),
+                      ),
+                    ),
+
+                    Gap(19.h),
+
+                    Obx(
+                      () => SizedBox(
+                        height: 42.h,
+                        width: 272.w,
+                        child: Text(
+                          controller.currentItem.description,
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context).textTheme.bodySmall
+                              ?.copyWith(fontWeight: FontWeight.w500),
                         ),
                       ),
-                    )),
-        
+                    ),
+
                     Gap(31.h),
-        
-                    Obx(() => Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: List.generate(
-                        controller.onboardingList.length,
-                            (index) => Container(
-                          margin: const EdgeInsets.all(4),
-                          width: controller.currentIndex.value == index
-                              ? 16
-                              : 12,
-                          height: 4.h,
-                          decoration: BoxDecoration(
-                            color: controller.currentIndex.value == index
-                                ? ThemeManager.orangeBase
-                                : ThemeManager.yellow2,
-                            borderRadius: BorderRadius.circular(10),
+
+                    Obx(
+                      () => Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(
+                          controller.onboardingList.length,
+                          (index) => Container(
+                            margin: const EdgeInsets.all(4),
+                            width: controller.currentIndex.value == index
+                                ? 16
+                                : 12,
+                            height: 4.h,
+                            decoration: BoxDecoration(
+                              color: controller.currentIndex.value == index
+                                  ? ThemeManager.orangeBase
+                                  : ThemeManager.yellow2,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
                           ),
                         ),
                       ),
-                    )),
-        
+                    ),
+
                     Gap(32.h),
-        
-                    Obx(() => CustomElevatedButton(
-                      height: 36.h,
-                      width: 133.w,
-                      buttonColor: ThemeManager.orangeBase,
-                      text: controller.currentIndex.value == 2
-                          ? "Get Started"
-                          : "Next",
-                      onPressed: controller.nextPage,
-                    )),
+
+                    Obx(
+                      () => CustomElevatedButton(
+                        height: 36.h,
+                        width: 133.w,
+                        buttonColor: ThemeManager.orangeBase,
+                        text: controller.currentIndex.value == 2
+                            ? "Get Started"
+                            : "Next",
+                        onPressed: controller.nextPage,
+                      ),
+                    ),
                   ],
                 ),
               ),
             ),
+            Obx(() {
+              if (controller.currentIndex.value ==
+                  controller.onboardingList.length - 1) {
+                return const SizedBox.shrink();
+              }
+
+              return Positioned(
+                right: 20,
+                top: 21.h,
+                child: GestureDetector(
+                  onTap: () {
+                    controller.pageController.jumpToPage(
+                      controller.onboardingList.length - 1,
+                    );
+                  },
+                  child: Row(
+                    children: [
+                      Text(
+                        'Skip',
+                        style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      Gap(1.w),
+                      Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        size: 15,
+                        color: ThemeManager.orangeBase,
+                      fontWeight: FontWeight.w600,
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            })
+
           ],
         ),
       ),
