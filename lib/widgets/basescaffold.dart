@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yumquick/core/res/theme_manager/theme_manager.dart';
 
 class BaseScaffold extends StatelessWidget {
   final PreferredSizeWidget? appBar;
@@ -19,21 +20,19 @@ class BaseScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5CB58),
+      backgroundColor:ThemeManager.yellowBase,
       appBar: appBar,
       floatingActionButton: floatingActionButton,
       bottomNavigationBar: bottomNavigationBar,
-      body: SafeArea(
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            if (showBlurGlow)
-              Center(
-              ),
+      body: Stack(
+        alignment: Alignment.center,
+        children: [
+          if (showBlurGlow)
+            Center(
+            ),
 
-            body,
-          ],
-        ),
+          body,
+        ],
       ),
     );
   }

@@ -201,6 +201,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/3dot.svg
   SvgGenImage get a3dot => const SvgGenImage('assets/svgs/3dot.svg');
 
+  /// File path: assets/svgs/Gmail.svg
+  SvgGenImage get gmail => const SvgGenImage('assets/svgs/Gmail.svg');
+
   /// File path: assets/svgs/Instagram.svg
   SvgGenImage get instagram => const SvgGenImage('assets/svgs/Instagram.svg');
 
@@ -260,6 +263,10 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/filter.svg
   SvgGenImage get filter => const SvgGenImage('assets/svgs/filter.svg');
 
+  /// File path: assets/svgs/fingerprint.svg
+  SvgGenImage get fingerprint =>
+      const SvgGenImage('assets/svgs/fingerprint.svg');
+
   /// File path: assets/svgs/globalicon.svg
   SvgGenImage get globalicon => const SvgGenImage('assets/svgs/globalicon.svg');
 
@@ -269,8 +276,14 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/heart.svg
   SvgGenImage get heart => const SvgGenImage('assets/svgs/heart.svg');
 
+  /// File path: assets/svgs/heart2.svg
+  SvgGenImage get heart2 => const SvgGenImage('assets/svgs/heart2.svg');
+
   /// File path: assets/svgs/helpline.svg
   SvgGenImage get helpline => const SvgGenImage('assets/svgs/helpline.svg');
+
+  /// File path: assets/svgs/home.svg
+  SvgGenImage get home => const SvgGenImage('assets/svgs/home.svg');
 
   /// File path: assets/svgs/location.svg
   SvgGenImage get location => const SvgGenImage('assets/svgs/location.svg');
@@ -317,11 +330,16 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/transfer.svg
   SvgGenImage get transfer => const SvgGenImage('assets/svgs/transfer.svg');
 
+  /// File path: assets/svgs/visibilityoff.svg
+  SvgGenImage get visibilityoff =>
+      const SvgGenImage('assets/svgs/visibilityoff.svg');
+
   /// List of all assets
   List<dynamic> get values => [
     a1dot,
     a2dot,
     a3dot,
+    gmail,
     instagram,
     less,
     logOutIcon,
@@ -341,10 +359,13 @@ class $AssetsSvgsGen {
     drinks,
     facebook,
     filter,
+    fingerprint,
     globalicon,
     googleplay,
     heart,
+    heart2,
     helpline,
+    home,
     location,
     mac,
     meals,
@@ -359,6 +380,7 @@ class $AssetsSvgsGen {
     settings,
     tick,
     transfer,
+    visibilityoff,
   ];
 }
 

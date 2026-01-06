@@ -149,8 +149,8 @@ class OnboardingScreen extends StatelessWidget {
                       Text(
                         'Skip',
                         style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w600,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
                         ),
                       ),
                       Gap(1.w),
@@ -158,7 +158,7 @@ class OnboardingScreen extends StatelessWidget {
                         Icons.arrow_forward_ios_rounded,
                         size: 15,
                         color: ThemeManager.orangeBase,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w400,
                       ),
                     ],
                   ),

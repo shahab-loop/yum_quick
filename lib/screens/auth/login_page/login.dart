@@ -40,7 +40,7 @@ class Login extends StatelessWidget {
                   'YUM',
                   style: Theme.of(
                     context,
-                  ).textTheme.titleSmall?.copyWith(color: ThemeManager.yellow2),
+                  ).textTheme.titleSmall?.copyWith(color: ThemeManager.yellowBase),
                 ),
                 Text(
                   'QUICK',
@@ -67,10 +67,14 @@ class Login extends StatelessWidget {
               width: 207.w,
               height: 45.h,
               buttonColor: ThemeManager.yellowBase,
-              text: 'Log In',
+              text: 'Log In',textStyle:  Theme.of(context).textTheme.displayMedium?.copyWith(
+              color:
+              ThemeManager.orangeBase,
+              fontWeight: FontWeight.w500,
+              fontSize: 24,
+            ),
               textColor: ThemeManager.orangeBase,
               onPressed: () {
-                debugPrint("Hello");
                 NavigationHelper.navigateTo(Routes.loginScreen);
               },
             ),
@@ -81,9 +85,13 @@ class Login extends StatelessWidget {
               height: 45.h,
               buttonColor: ThemeManager.yellow2,
               text: 'Sign Up',
-              textColor: ThemeManager.orangeBase,
-              onPressed: () {
-                debugPrint("Hello");
+              textStyle:  Theme.of(context).textTheme.displayMedium?.copyWith(
+              color:
+              ThemeManager.orangeBase,
+              fontWeight: FontWeight.w500,
+              fontSize: 24,
+            ),textColor: ThemeManager.orangeBase,
+              onPressed: () { NavigationHelper.navigateTo(Routes.signupScreen);
               },
             ),
 

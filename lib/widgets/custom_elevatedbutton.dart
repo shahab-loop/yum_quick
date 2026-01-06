@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter/material.dart';
+
 class CustomElevatedButton extends StatelessWidget {
   final double width;
   final double height;
@@ -7,6 +9,7 @@ class CustomElevatedButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final Color textColor;
+  final TextStyle? textStyle;
 
   const CustomElevatedButton({
     Key? key,
@@ -16,6 +19,7 @@ class CustomElevatedButton extends StatelessWidget {
     required this.text,
     required this.onPressed,
     this.textColor = Colors.white,
+    this.textStyle,
   }) : super(key: key);
 
   @override
@@ -33,9 +37,12 @@ class CustomElevatedButton extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: Theme.of(context).textTheme.displayMedium?.copyWith(
-            color: textColor,fontWeight: FontWeight.w500
-          ),
+          style: textStyle ??
+              Theme.of(context).textTheme.displayMedium?.copyWith(
+                color: textColor,
+                fontWeight: FontWeight.w500,
+                fontSize: 17,
+              ),
         ),
       ),
     );

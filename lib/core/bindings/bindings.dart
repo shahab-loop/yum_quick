@@ -28,3 +28,21 @@ class LoginScreenBinding extends Bindings {
     Get.lazyPut(() => LoginScreenBinding());
   }
 }
+class SignupScreenBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut(() => SignupScreenBinding());
+  }
+}
+class PasswordSetupBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut(() => PasswordSetupBinding());
+  }
+}
+class FingerprintScreenBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut(() => FingerprintScreenBinding());
+  }
+}

@@ -12,14 +12,20 @@ class CustomTextFormFieldWidget extends StatelessWidget {
   final String? Function(String?)? validator;
   final ValueChanged<String>? onChanged;
 
+  // SVGs
   final String? prefixSvg;
   final String? suffixSvg;
-  final String? suffixSvgOff;
+
+  // Icons fallback
+  final IconData? prefixIconData;
+  final IconData? suffixIconData;
+
   final Color? prefixColor;
   final Color? suffixColor;
 
-  final Color TextColor ;
+  final Color TextColor;
   final double? width;
+  final double radius;
   final Color? hintColor;
   final Color borderColor;
   final Color focusedBorderColor;
@@ -28,7 +34,6 @@ class CustomTextFormFieldWidget extends StatelessWidget {
   final int maxLines;
   final int? minLines;
   final bool useUnderlineBorder;
-
 
   final ValueNotifier<bool> _obscureNotifier;
 
@@ -41,9 +46,15 @@ class CustomTextFormFieldWidget extends StatelessWidget {
     this.controller,
     this.validator,
     this.onChanged,
+
+    // SVGs
     this.prefixSvg,
     this.suffixSvg,
-    this.suffixSvgOff,
+
+    // Icons
+    this.prefixIconData,
+    this.suffixIconData,
+
     this.prefixColor,
     this.suffixColor,
     this.width,
@@ -53,10 +64,11 @@ class CustomTextFormFieldWidget extends StatelessWidget {
     this.contentPadding,
     this.maxLines = 1,
     this.minLines,
-    this.useUnderlineBorder = false, required this.TextColor,
+    this.useUnderlineBorder = false,
+    required this.TextColor,
+    required this.radius,
   })  : borderColor = borderColor ?? ThemeManager.primaryColor,
-        focusedBorderColor =
-            focusedBorderColor ?? ThemeManager.primaryColor,
+        focusedBorderColor = focusedBorderColor ?? ThemeManager.primaryColor,
         _obscureNotifier = ValueNotifier<bool>(obscure);
 
   @override
@@ -66,7 +78,7 @@ class CustomTextFormFieldWidget extends StatelessWidget {
       borderSide: BorderSide(color: borderColor),
     )
         : OutlineInputBorder(
-      borderRadius: BorderRadius.circular(4),
+      borderRadius: BorderRadius.circular(radius),
       borderSide: BorderSide(color: borderColor),
     );
 
@@ -88,21 +100,17 @@ class CustomTextFormFieldWidget extends StatelessWidget {
             style: TextStyle(
               color: TextColor,
               fontSize: 20.px,
-
             ),
             decoration: InputDecoration(
               filled: true,
               fillColor: backgroundColor,
-
               hintText: hintText,
               hintStyle: TextStyle(
                 color: hintColor ?? Colors.grey,
                 fontSize: 12.px,
               ),
-
               contentPadding: contentPadding ??
                   const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
-
               border: border,
               enabledBorder: border,
               focusedBorder: border.copyWith(
@@ -111,7 +119,6 @@ class CustomTextFormFieldWidget extends StatelessWidget {
               errorBorder: border.copyWith(
                 borderSide: const BorderSide(color: Colors.red),
               ),
-
               errorStyle: const TextStyle(
                 fontSize: 11,
                 height: 1.2,
@@ -130,25 +137,39 @@ class CustomTextFormFieldWidget extends StatelessWidget {
                   height: 20,
                 ),
               )
+                  : prefixIconData != null
+                  ? Icon(
+                prefixIconData,
+                color: prefixColor ?? ThemeManager.black2,
+                size: 22,
+              )
                   : null,
 
               suffixIcon: isPasswordField
                   ? InkWell(
-                onTap: () =>
-                _obscureNotifier.value = !obscureValue,
+                onTap: () {
+                  _obscureNotifier.value = !obscureValue;
+                },
                 child: Padding(
                   padding: const EdgeInsets.all(12),
-                  child: SvgPicture.asset(
-                    obscureValue
-                        ? suffixSvg!
-                        : suffixSvgOff!,
+                  child: suffixSvg != null
+                      ? SvgPicture.asset(
+                    suffixSvg!,
                     colorFilter: ColorFilter.mode(
                       suffixColor ?? ThemeManager.black2!,
                       BlendMode.srcIn,
                     ),
                     width: 20,
                     height: 20,
-                  ),
+                  )
+                      : suffixIconData != null
+                      ? Icon(
+                    suffixIconData,
+                    color:
+                    suffixColor ?? ThemeManager.black2,
+                    size: 22,
+                  )
+                      : null,
                 ),
               )
                   : null,

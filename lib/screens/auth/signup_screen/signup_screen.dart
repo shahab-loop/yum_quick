@@ -8,78 +8,92 @@ import 'package:yumquick/core/navigations/routes/routes.dart';
 import 'package:yumquick/core/res/theme_manager/theme_manager.dart';
 import 'package:yumquick/core/utils/size_utils.dart';
 import 'package:yumquick/gen/assets.gen.dart';
-import 'package:yumquick/screens/auth/login_screen/controller/loginscreen_controller.dart';
-import 'package:yumquick/screens/auth/signup_screen/signup_screen.dart';
+import 'package:yumquick/screens/auth/signup_screen/controller/signup_controller.dart';
 import 'package:yumquick/widgets/basescaffold.dart';
 import 'package:yumquick/widgets/custom_elevatedbutton.dart';
 import 'package:yumquick/widgets/custom_textfield.dart';
 
-class LoginScreen extends StatelessWidget {
-  static const String routeName = '/loginScreen';
+class SignupScreen extends StatelessWidget {
+  static const String routeName = '/signupScreen';
 
-  const LoginScreen({super.key});
+  const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Get.put(LoginScreenController());
+    Get.put(SignupScreenController());
 
     return BaseScaffold(
       body: SafeArea(
         top: true,
         bottom: false,
-        child: Stack(
-          children: [
-            Column(
-              children: [
-                Gap(10.h),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
-                  child: Row(
-                    children: [
-                      GestureDetector(
-                        onTap: () => Navigator.pop(context),
-                        child: Icon(
-                          Icons.arrow_back_ios_new_outlined,
-                          color: ThemeManager.orangeBase,
+        child: SingleChildScrollView(
+          child: Stack(
+            children: [
+              Column(
+                children: [
+                  Gap(10.h),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
+                    child: Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () => Navigator.pop(context),
+                          child: Icon(
+                            Icons.arrow_back_ios_new_outlined,
+                            color: ThemeManager.orangeBase,
+                          ),
                         ),
-                      ),
-                      Spacer(),
-                      Text(
-                        'Log In',
-                        style: Theme.of(context).textTheme.displayLarge,
-                      ),
-                      Spacer(),
-                    ],
+                        Spacer(),
+                        Text(
+                          'New Account',
+                          style: Theme.of(context).textTheme.displayLarge,
+                        ),
+                        Spacer(),
+                      ],
+                    ),
                   ),
-                ),
-                Gap(70.h),
-                Container(
-                  height: 668.h,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: ThemeManager.white,
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: SizedBox(
-                    width: 322.w,
-                    height: 689.h,
+                  Gap(70.h),
+                  Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: ThemeManager.white,
+                      borderRadius: BorderRadius.circular(30),
+                    ),
                     child: Padding(
-                      padding: EdgeInsets.only(top: 34, left: 35, right: 35),
+                      padding: EdgeInsets.symmetric(horizontal: 20.w),
                       child: Column(
-                        crossAxisAlignment: .start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            'Welcome',
-                            style: Theme.of(context).textTheme.headlineMedium,
-                          ),
-                          Gap(19.h),
-                          Text(
-                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-                            style: Theme.of(context).textTheme.headlineSmall,
-                          ),
                           Gap(46.h),
+
                           Text(
-                            'Email or Mobile Number',
+                            'Full name',
+                            style: Theme.of(context).textTheme.headlineLarge,
+                          ),
+                          Gap(10.h),
+                          CustomTextFormFieldWidget(
+                            hintText: 'Adam Smith',
+                            backgroundColor: ThemeManager.yellow2,
+                            TextColor: ThemeManager.lightBrown,
+                            radius: 30,
+                          ),
+                          Gap(10.h),
+                          Text(
+                            'Password',
+                            style: Theme.of(context).textTheme.headlineLarge,
+                          ),
+                          Gap(10.h),
+                          CustomTextFormFieldWidget(
+                            hintText: '*************',
+                            backgroundColor: ThemeManager.yellow2,
+                            TextColor: ThemeManager.lightBrown,
+                            width: 322,
+                            radius: 30,
+                            obscure: true,
+                          ),
+                          Gap(10.h),
+                          Text(
+                            'Email',
                             style: Theme.of(context).textTheme.headlineLarge,
                           ),
                           Gap(10.h),
@@ -90,54 +104,86 @@ class LoginScreen extends StatelessWidget {
                             width: 322,
                             radius: 30,
                           ),
-                          Gap(22.h),
+                          Gap(10.h),
                           Text(
-                            'Password',
+                            'Mobile Number',
                             style: Theme.of(context).textTheme.headlineLarge,
                           ),
                           Gap(10.h),
                           CustomTextFormFieldWidget(
-                            hintText: '*************',
+                            hintText: '+ 123 456 789',
                             backgroundColor: ThemeManager.yellow2,
                             TextColor: ThemeManager.lightBrown,
                             radius: 30,
-                            obscure: true,
                           ),
-                          Gap(14.h),
-                          GestureDetector(
-                            onTap: () {},
-                            child: Row(mainAxisAlignment: .end,
-                              children: [
-                                Text(
-                                  'Forgot Password?',
-                                  style: Theme.of(
-                                    context,
-                                  ).textTheme.labelMedium,
+                          Gap(10.h),
+                          Text(
+                            'Date of birth',
+                            style: Theme.of(context).textTheme.headlineLarge,
+                          ),
+                          Gap(10.h),
+                          CustomTextFormFieldWidget(
+                            hintText: 'DD / MM /YYY',
+                            backgroundColor: ThemeManager.yellow2,
+                            TextColor: ThemeManager.lightBrown,
+                            radius: 30,
+                          ),
+                          Gap(20.h),
+                          Align(
+                            alignment: .center,
+                            child: SizedBox(
+                              width: 200.w,
+                              child: Text.rich(
+                                TextSpan(
+                                  text: 'By continuing, you agree to ',
+                                  style: Theme.of(context).textTheme.bodyMedium
+                                      ?.copyWith(
+                                        color: ThemeManager.black2,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                  children: [
+                                    TextSpan(
+                                      text: 'Terms of Use',
+                                      style: Theme.of(
+                                        context,
+                                      ).textTheme.bodyMedium,
+                                    ),
+                                    const TextSpan(text: ' and '),
+                                    TextSpan(
+                                      text: 'Privacy Policy.',
+                                      style: Theme.of(
+                                        context,
+                                      ).textTheme.bodyMedium,
+                                    ),
+                                  ],
                                 ),
-                              ],
+                                textAlign: TextAlign.center,
+                              ),
                             ),
                           ),
-                          Gap(61.h),
+                          Gap(20.h),
                           Align(
                             alignment: .center,
                             child: CustomElevatedButton(
                               width: 207.w,
                               height: 45.h,
                               buttonColor: ThemeManager.orangeBase,
-                              text: 'log In',
-                              onPressed: () {},
+                              text: 'Sign Up',
+                              onPressed: () {
+                                NavigationHelper.navigateTo(Routes.passwordSetup);
+                              },
                               textStyle: TextStyle(fontSize: 22),
                             ),
                           ),
-                          Gap(29.h),
-                          Align(
+                          Gap(9.h),
+Align(
                             alignment: .center,
                             child: Text(
                               'or sign up with',
                               style: Theme.of(context).textTheme.headlineSmall,
                             ),
                           ),
-                          Gap(7.h),
+                          Gap(9.h),
                           Align(
                             alignment: .center,
                             child: SizedBox(
@@ -197,7 +243,7 @@ class LoginScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Gap(31.9.h),
+                          Gap(8.h),
                           Row(
                             mainAxisAlignment: .center,
                             children: [
@@ -209,10 +255,9 @@ class LoginScreen extends StatelessWidget {
                               ),
                               GestureDetector(
                                 onTap: () {
-                                  NavigationHelper.navigateTo(Routes.signupScreen);
-                                },
+                                  NavigationHelper.navigateTo(Routes.loginScreen);},
                                 child: Text(
-                                  'Sign Up',
+                                  'Login In',
                                   style: Theme.of(
                                     context,
                                   ).textTheme.labelMedium,
@@ -220,50 +265,17 @@ class LoginScreen extends StatelessWidget {
                               ),
                             ],
                           ),
+                          Gap(30.h),
                         ],
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-
-            // Positioned(
-            //   bottom: 0.h,
-            //   child: Container(
-            //     height: 60.h,
-            //     width: double.infinity,
-            //     decoration: BoxDecoration(
-            //       color: ThemeManager.orangeBase,
-            //       borderRadius: BorderRadius.circular(30),
-            //     ),
-            //     child: Row(
-            //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            //       children: [
-            //         _buildNavItem(Assets.svgs.home.path, () {}),
-            //         _buildNavItem(Assets.svgs.boofy.path, () {}),
-            //         _buildNavItem(Assets.svgs.heart2.path, () {}),
-            //         _buildNavItem(Assets.svgs.notes.path, () {}),
-            //         _buildNavItem(Assets.svgs.helpline.path, () {}),
-            //       ],
-            //     ),
-            //   ),
-            // ),
-          ],
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
-
-  //   Widget _buildNavItem(String assetName, VoidCallback onTap) {
-  //     return GestureDetector(
-  //       onTap: onTap,
-  //       child: SvgPicture.asset(
-  //         assetName,
-  //         color: ThemeManager.white,
-  //         height: 24,
-  //         width: 24,
-  //       ),
-  //     );
-  //   }
 }
