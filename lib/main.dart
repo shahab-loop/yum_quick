@@ -9,11 +9,6 @@ import 'package:yumquick/storage/local_storage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-  //   statusBarColor: ThemeManager.yellow2,
-  //   statusBarIconBrightness: Brightness.light,
-  //   statusBarBrightness: Brightness.dark,
-  // ));
   await LocalStorage.init();
   runApp(const MyApp());
 }
@@ -35,7 +30,7 @@ class MyApp extends StatelessWidget {
             darkTheme: ThemeManager.darkTheme,
             locale: const Locale('en', 'US'),
             theme: ThemeManager.darkTheme,
-            initialRoute: Routes.fingerprintScreen,
+            initialRoute: Routes.splashScreen,
             getPages: AppRoutes.pages,
           ),
         );

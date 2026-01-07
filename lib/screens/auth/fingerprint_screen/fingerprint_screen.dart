@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
+import 'package:yumquick/core/navigations/navigation_helper/navigation_helper.dart';
+import 'package:yumquick/core/navigations/routes/routes.dart';
 import 'package:yumquick/core/res/theme_manager/theme_manager.dart';
 import 'package:yumquick/core/utils/size_utils.dart';
 import 'package:yumquick/screens/auth/fingerprint_screen/controller/fingerprint_controller.dart';
-import 'package:yumquick/screens/auth/password_screen/controller/password_controller.dart';
 import 'package:yumquick/widgets/basescaffold.dart';
 import 'package:yumquick/widgets/custom_elevatedbutton.dart';
-import 'package:yumquick/widgets/custom_textfield.dart';
-
-import 'package:yumquick/gen/assets.gen.dart';
 
 class FingerprintScreen extends StatelessWidget {
   static const String routeName = '/fingerprintScreen';
@@ -78,7 +76,9 @@ class FingerprintScreen extends StatelessWidget {
                                 height: 35.h,
                                 buttonColor: ThemeManager.orange2,
                                 text: 'Skip',
-                                onPressed: () {},
+                                onPressed: () {
+                                  NavigationHelper.navigateTo(Routes.homeScreen);
+                                },
                                 textStyle: TextStyle(fontSize: 22),
                               ),
                               Gap(13.h),

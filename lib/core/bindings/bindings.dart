@@ -1,5 +1,10 @@
 import 'package:get/get.dart';
+import 'package:yumquick/screens/auth/fingerprint_screen/controller/fingerprint_controller.dart';
 import 'package:yumquick/screens/auth/login_page/controller/login_controller.dart';
+import 'package:yumquick/screens/auth/login_screen/controller/loginscreen_controller.dart';
+import 'package:yumquick/screens/auth/password_screen/controller/password_controller.dart';
+import 'package:yumquick/screens/auth/signup_screen/controller/signup_controller.dart';
+import 'package:yumquick/screens/home_screen/controller/home_controller/home_controller.dart';
 import 'package:yumquick/screens/onboarding_screen/controller/onboarding_controller.dart';
 import 'package:yumquick/screens/splash_screen/controller/splash_controller.dart';
 
@@ -25,24 +30,30 @@ class LoginBinding extends Bindings {
 class LoginScreenBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => LoginScreenBinding());
+    Get.lazyPut(() => LoginScreenController());
   }
 }
 class SignupScreenBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => SignupScreenBinding());
+    Get.lazyPut(() => SignupScreenController());
   }
 }
 class PasswordSetupBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => PasswordSetupBinding());
+    Get.lazyPut(() => PasswordSetupController());
   }
 }
 class FingerprintScreenBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => FingerprintScreenBinding());
+    Get.lazyPut(() => FingerprintScreenController());
+  }
+}
+class HomeScreenBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut(() => HomeController());
   }
 }

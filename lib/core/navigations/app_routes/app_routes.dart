@@ -6,6 +6,7 @@ import 'package:yumquick/screens/auth/login_page/login.dart';
 import 'package:yumquick/screens/auth/login_screen/login_screen.dart';
 import 'package:yumquick/screens/auth/password_screen/password_setup.dart';
 import 'package:yumquick/screens/auth/signup_screen/signup_screen.dart';
+import 'package:yumquick/screens/home_screen/home_screen.dart';
 import 'package:yumquick/screens/onboarding_screen/onboarding_screen.dart';
 import 'package:yumquick/screens/splash_screen/splash.dart';
 class AppRoutes {
@@ -44,6 +45,11 @@ class AppRoutes {
       name: Routes.fingerprintScreen,
       binding: FingerprintScreenBinding(),
       page: () => FingerprintScreen(),
+    ),
+    GetPage(
+      name: Routes.homeScreen,
+      binding: HomeScreenBinding(),
+      page: () => HomeScreen(),
     ),
   ];
 }
